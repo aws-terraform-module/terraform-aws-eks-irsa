@@ -69,3 +69,16 @@ variable "json_policy" {
     ]
   }
 }
+
+variable "k8s_namespace" {
+  description = "In Kubernetes (k8s), a namespace is a virtual cluster or an environment created within the actual Kubernetes cluster. It provides a scope for names and allows you to divide cluster resources between multiple users, teams, projects, or customers."
+  type = string
+  default = ""
+}
+
+
+variable "k8s_service_account" {
+  description = "Service accounts in Kubernetes are accounts that are meant to be used by services (like pods) running in a Kubernetes cluster, rather than by human users. They provide an identity for processes that run in a Pod."
+  type = string
+  default = ""
+}
