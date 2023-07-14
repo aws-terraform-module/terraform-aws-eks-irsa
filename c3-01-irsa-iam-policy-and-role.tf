@@ -54,6 +54,6 @@ resource "aws_iam_role_policy_attachment" "irsa_iam_role_policy_attach" {
 }
 
 output "irsa_iam_role_arn" {
-  description = "IRSA Demo IAM Role ARN"
+  description = "IRSA Demo IAM Role ARN. You need add this values to serviceAccount.annotations with key `eks.amazonaws.com/role-arn`"
   value = aws_iam_role.irsa_iam_role.arn
 }
