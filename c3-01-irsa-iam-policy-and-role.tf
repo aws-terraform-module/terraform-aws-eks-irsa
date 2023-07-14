@@ -11,7 +11,7 @@ resource "aws_iam_policy" "irsa_iam_policy" {
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
-  policy = jsonencode(var.json_policy)
+  policy = var.json_policy
 }
 
 #data.terraform_remote_state.eks.outputs.aws_iam_openid_connect_provider_arn
