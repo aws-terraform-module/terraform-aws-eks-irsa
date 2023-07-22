@@ -66,3 +66,23 @@ output "irsa_iam_role_arn" {
   value = module.eks-irsa.irsa_iam_role_arn
 }
 ```
+
+Next then, Notice irsa_iam_role_arn output and add this value to annotion of you application
+
+```yaml
+root@LP11-D7891:~# kubectl get sa/irsa-demo-sa -o yaml
+apiVersion: v1
+automountServiceAccountToken: true
+kind: ServiceAccount
+metadata:
+  annotations:
+    ###### Notice below line #####
+    eks.amazonaws.com/role-arn: arn:aws:iam::250887682577:role/SAP-dev-irsa-iam-role
+  creationTimestamp: "2022-09-08T05:39:20Z"
+  name: irsa-demo-sa
+  namespace: default
+  resourceVersion: "208932"
+  uid: 4c6298b9-d888-4212-8a71-67a242b24b1f
+secrets:
+- name: irsa-demo-sa-token-vdstw
+```
