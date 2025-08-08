@@ -35,6 +35,7 @@ module "eks-irsa" {
   source  = "aws-terraform-module/eks-irsa/aws"
   version = "1.1.0"
 
+
   aws_region = var.aws_region
   environment = "dev"
   business_divsion = "irsa-zeus-rotations"
