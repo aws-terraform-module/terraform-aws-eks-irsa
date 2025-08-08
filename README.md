@@ -32,8 +32,8 @@ data "aws_eks_cluster" "eks_k8s" {
 
 
 module "eks-irsa" {
-  source  = "mrnim94/eks-irsa/aws"
-  version = "0.0.4"
+  source  = "aws-terraform-module/eks-irsa/aws"
+  version = "1.1.0"
 
   aws_region = var.aws_region
   environment = "dev"
